@@ -1,0 +1,9 @@
+cgePipeline('docker-buildx') {
+  overrideAppName 'cloudnative-pg-operator-test'
+  overrideAppVersion '1.0'
+  skipEnv 'qa', 'stage', 'prod'
+  role 'sandbox'
+  dockerComposeEnabled false
+  dockerBakeFile 'docker-bake.hcl'
+  push 'app'
+}
